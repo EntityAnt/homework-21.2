@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <title>Основы верстки 21.2</title>
+    <style>
+        #iframeContent {
+            width: 100%;
+            height: 100vh; /* Задаем высоту iframe на весь экран */
+            border: none;  /* Убираем рамку */
+        }
+    </style>
 </head>
 <body>
 <div class="col">
@@ -19,19 +26,18 @@
                     <div class="col">
                         <ul class="nav flex-column ">
                             <li class="nav-item align-self-start">
-                                <a class="nav-link active" aria-current="page" href="#">Главная</a>
+                                <a class="nav-link" href="javascript:void(0);" onclick="openHome()">Главная</a>
                             </li>
                             <li class="nav-item align-self-start">
-                                <a class="nav-link" href="#">Категории</a>
+                                <a class="nav-link" href="javascript:void(0);" onclick="openCategories()">Категории</a>
                             </li>
                             <li class="nav-item align-self-start">
-                                <a class="nav-link" href="#">Заказы</a>
+                                <a class="nav-link" href="javascript:void(0);" onclick="openOrders()">Заказы</a>
                             </li>
                             <li class="nav-item align-self-start">
-                                <a class="nav-link" href="#">Контакты</a>
+                                <a class="nav-link" href="javascript:void(0);" onclick="openContacts()">Контакты</a>
                             </li>
                         </ul>
-
                     </div>
                     <div class="card-footer align-self-start">
                         <div class="dropup">
@@ -48,14 +54,35 @@
                     </div>
                 </div>
             </nav>
-
         </div>
         <div class="col-10">
-
+            <div id="content">
+                <iframe id="iframeContent" src="home.html"></iframe>
+            </div>
         </div>
     </div>
-
 </div>
+
+<script>
+    function openHome() {
+        document.getElementById('iframeContent').src = 'home.html';
+    }
+</script>
+<script>
+    function openCategories() {
+        document.getElementById('iframeContent').src = 'categories.html';
+    }
+</script>
+<script>
+    function openOrders() {
+        document.getElementById('iframeContent').src = 'orders.html';
+    }
+</script>
+<script>
+    function openContacts() {
+        document.getElementById('iframeContent').src = 'contacts.html';
+    }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
