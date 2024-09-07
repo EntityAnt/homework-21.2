@@ -24,13 +24,13 @@ class MyRequestHandler(http.server.SimpleHTTPRequestHandler):
 
     def do_POST(self):
         if self.path == '/submit':
-            content_length = int(self.headers['Content-Length'])  # Длина тела запроса
+            content_length = int(self.headers['Content-Length'])
             post_data = self.rfile.read(content_length)  # Читаем тело запроса
 
             # Парсим данные
             data = urllib.parse.parse_qs(post_data.decode('utf-8'))
 
-            # Печатаем данные вконсоль
+            # Печатаем данные в консоль
             print("Полученные данные:", data)
 
             self.send_response(200)
