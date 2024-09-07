@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <title>Основы верстки 21.2</title>
+    <style>
+        #iframeContent {
+            width: 100%;
+            height: 100vh; /* Задаем высоту iframe на весь экран */
+            border: none;  /* Убираем рамку */
+        }
+    </style>
+</head>
+<body>
+<div class="col">
+    <div class="row 12">
+        <div class="col-2">
+            <nav class="navbar bg-dark border-bottom border-body"
+                 style="height: 100vh; display: flex; flex-direction: column;" data-bs-theme="dark" role="navigation">
+                <div class="card text-center flex-fill" style="width: 100%">
+                    <div class="card-header">
+                        Меню
+                    </div>
+                    <div class="col">
+                        <ul class="nav flex-column ">
+                            <li class="nav-item align-self-start">
+                                <a class="nav-link" href="javascript:void(0);" onclick="openHome()">Главная</a>
+                            </li>
+                            <li class="nav-item align-self-start">
+                                <a class="nav-link" href="javascript:void(0);" onclick="openCategories()">Категории</a>
+                            </li>
+                            <li class="nav-item align-self-start">
+                                <a class="nav-link" href="javascript:void(0);" onclick="openOrders()">Заказы</a>
+                            </li>
+                            <li class="nav-item align-self-start">
+                                <a class="nav-link" href="javascript:void(0);" onclick="openContacts()">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer align-self-start">
+                        <div class="dropup">
+                            <button class="btn dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                Пользователь
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Профиль</a></li>
+                                <li><a class="dropdown-item" href="#">Выход</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="col-10">
+            <div id="content">
+                <iframe id="iframeContent" src="home.html"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openHome() {
+        document.getElementById('iframeContent').src = 'home.html';
+    }
+</script>
+<script>
+    function openCategories() {
+        document.getElementById('iframeContent').src = 'categories.html';
+    }
+</script>
+<script>
+    function openOrders() {
+        document.getElementById('iframeContent').src = 'orders.html';
+    }
+</script>
+<script>
+    function openContacts() {
+        document.getElementById('iframeContent').src = 'contacts.html';
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+</body>
+</html>
